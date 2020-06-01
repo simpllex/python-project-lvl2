@@ -1,4 +1,4 @@
 install:
 	poetry install
 lint:
-	poetry run wemake-python-styleguide gendiff
+	poetry run flake8 gendiff
