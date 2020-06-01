@@ -1,19 +1,20 @@
 [tool.poetry]
-name = "simpllex_difference_calculator"
+name = "simpllex_gendiff"
 version = "0.1.0"
 description = ""
 authors = ["vera <marinenskaya.vera@gmail.com>"]
 packages = [
-  { include = "difference_calculator" },
+  { include = "gendiff" },
 ]
 
 [tool.poetry.dependencies]
 python = "^3.7"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^3.8.2"
 
 [tool.poetry.scripts]
-gendiff = "difference_calculator.scripts.difference_calculator:main"
+gendiff = "gendiff.scripts.gendiff:main"
 
 [build-system]
 requires = ["poetry>=0.12"]
