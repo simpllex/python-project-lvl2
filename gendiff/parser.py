@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+"""The option parser."""
+
 import argparse
 
 
