@@ -30,6 +30,7 @@ def build_diff(old, new):
     result += convert_to_string(modified_new)
     same = {o : old[o] for o in intersect_keys if old[o] == new[o]}
     result += convert_to_string(same)
+    print("{\n" + result + "\n}")
     return ("{\n" + result + "\n}")
     
 
@@ -52,6 +53,6 @@ def convert_to_string(my_dict):
     """
     my_str = ''
     for key, value in my_dict.items():
-        my_str = key + ' : ' + str(value)
+        my_str = key + ' : ' + str(value) + " "
     return my_str
  
