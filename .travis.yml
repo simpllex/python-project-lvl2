@@ -4,7 +4,7 @@ python:
   - 3.7
 env:
   global:
-    CC_TEST_REPORTER_ID=a1e6a8390f16668e4bd5cd5a9102f4cde2ecbcb914ab2b63f5a37e801277da50
+    - CC_TEST_REPORTER_ID=a1e6a8390f16668e4bd5cd5a9102f4cde2ecbcb914ab2b63f5a37e801277da50
 
 before_install:
   # make depends on poetry
@@ -13,5 +13,14 @@ before_install:
 install:
   - make install
 
+before_script:
+      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+      - chmod +x ./cc-test-reporter
+      - ./cc-test-reporter before-build
+
 script:
   - make check
+
+after_script: 
+      
+      - ./cc-test-reporter after-build --coverage-input-type coverage.py --debug --exit-code $TRAVIS_TEST_RESULT 
