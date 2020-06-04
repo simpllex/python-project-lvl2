@@ -5,7 +5,7 @@ lint:
 	poetry run flake8 gendiff
 
 test:
-	python -m pytest
+	python -m pytest --cov-report xml
 
 selfcheck:
 	poetry check
