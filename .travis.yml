@@ -20,6 +20,7 @@ before_script:
 
 script:
   - make check
+  - make test-coverage
 
 after_script: 
   - ./cc-test-reporter after-build --coverage-input-type coverage.py --debug --exit-code $TRAVIS_TEST_RESULT 
