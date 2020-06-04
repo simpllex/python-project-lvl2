@@ -2,6 +2,9 @@
 python:
   # we want to test our package on several versions of Python
   - 3.7
+env:
+  global:
+    CC_TEST_REPORTER_ID=a1e6a8390f16668e4bd5cd5a9102f4cde2ecbcb914ab2b63f5a37e801277da50
 
 before_install:
   # make depends on poetry

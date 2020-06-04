@@ -6,7 +6,6 @@ lint:
 
 test:
 	python -m pytest
-
 selfcheck:
 	poetry check
 
