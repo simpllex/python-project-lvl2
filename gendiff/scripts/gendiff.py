@@ -1,11 +1,13 @@
 from gendiff.parser import parse_args
-from gendiff.engine import build_diff
+from gendiff.engine import return_string, read_file
 
 
 def main():
     options = parse_args()
-    diff_string = build_diff(options.first_file, options.second_file)
-    print(diff_string)
+    old = read_file(options.first_file)
+    new = read_file(options.second_file)
+    diff = return_string(old, new)
+    print(diff)
 
 
 if __name__ == '__main__':
