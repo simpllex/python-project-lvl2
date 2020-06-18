@@ -96,7 +96,16 @@ def convert_to_string(my_dict):
 
 
 def join_str(flag, key, value):
-    return (flag + " " + key + ": " + str(value))
+    if isinstance(value, dict):
+        result = ""
+        internal_values = []
+        for inkey, inval in value.items():
+            temp = "\t" + inkey + ": " + inval
+            internal_values.append(temp)
+        result = "{\n" + "\n".join(x for x in internal_values) + "\n  }"
+        return (flag + " " + key + ": " + result)
+    else:
+        return (flag + " " + key + ": " + str(value))
 
 
 def return_string(old, new):
