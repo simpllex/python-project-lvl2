@@ -69,16 +69,14 @@ def convert_to_string(my_dict):
     res = ''
     for key, value in my_dict.items():
         flag, rest = value[0], value[1:]
+        meaning = rest[0]
         if flag == "UNCHANGED":
-            meaning = rest[0]
             mstr = join_str(" ", key, meaning)
             my_str.append(mstr)
         if flag == "ADDED":
-            meaning = rest[0]
             mstr = join_str("+", key, meaning)
             my_str.append(mstr)
         if flag == "REMOVED":
-            meaning = rest[0]
             mstr = join_str("-", key, meaning)
             my_str.append(mstr)
         if flag == "CHANGED":
